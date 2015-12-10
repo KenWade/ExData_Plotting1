@@ -1,5 +1,7 @@
 ####
 #
+#   plot1.R
+#
 #   Exploratory Data Analysis (class.coursera.org/exdata-035)
 #
 #   Making Plots
@@ -20,7 +22,7 @@ library(lubridate)
 #
 #    Read in the Electric power consumption data from the working directory
 #
-#       As an side detail suggusted in the project description...
+#       As a side detail suggusted in the project description...
 #           find the size of the data frame object and consider the implecations.
 #
 #               Input file size:        132,960,755 bytes ~ 130MB
@@ -29,14 +31,16 @@ library(lubridate)
 #                   7.12 bytes per variable per observation in the data file
 #                   8.00 bytes per variable per observation in the data frame
 #
-# Data daken from UCI Machine Learning Repository: https://archive.ics.uci.edu/ml/datasets/Individual+household+electric+power+consumption
+# Data daken from UCI Machine Learning Repository:
+#                   https://archive.ics.uci.edu/ml/datasets/Individual+household+electric+power+consumption
 #
 # Downloaded from: https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
 
 get_household_power_consumption_data <- function() {
 
     hpc_filename   <- "household_power_consumption.txt"
-    hpc_colClasses <- c("character",  "character", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric")
+    hpc_colClasses <- c("character",  "character", "numeric", "numeric", "numeric",
+                        "numeric", "numeric", "numeric", "numeric")
     hpc_nastrings  <- "?"
 
     minDate <- as.Date("2007-02-01", "%Y-%m-%d")
@@ -75,7 +79,8 @@ get_household_power_consumption_data <- function() {
 epc <- get_household_power_consumption_data()
 
 png(filename = "plot1.png", width = 480, height = 480, units = "px")
-hist(epc$Global_active_power, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", col = "red", breaks = 12)
+hist(epc$Global_active_power, main = "Global Active Power", xlab = "Global Active Power (kilowatts)",
+     col = "red", breaks = 12)
 dev.off()
 
 
