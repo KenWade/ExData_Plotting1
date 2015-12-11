@@ -28,6 +28,9 @@ library(lubridate)
 #               Input file size:        132,960,755 bytes ~ 130MB
 #               Data Frame object.size: 149,581,752 bytes ~ 142MB
 #               Data Frame dimensions:  2075259 obs. of  9 variables
+#               Rule of Thumb:          rows * columns * 8 bytes = 149,418,648 bytes ~ 142MB
+#
+#               Actual:
 #                   7.12 bytes per variable per observation in the data file
 #                   8.00 bytes per variable per observation in the data frame
 #
