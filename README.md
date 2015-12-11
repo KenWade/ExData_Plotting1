@@ -10,7 +10,7 @@ Dr. Peng's original README.md file is below.  It would be hard to improve upon i
 
          rows * columns * 8 bytes
 
-the expected memory needed for the dataset is almost exactly what the object.size function reports as the size of the full data frame. The comments and code to confirm this information is in all the plot.R files located in the common datafile reading function.
+    the expected memory needed for the dataset is almost exactly what the object.size function reports as the size of the full data frame. The comments and code to confirm this information is in all the plot.R files located in the common datafile reading function.
 
 ## Introduction
 
