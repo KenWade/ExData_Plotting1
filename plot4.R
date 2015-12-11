@@ -1,6 +1,6 @@
 ####
 #
-#   plot1.R
+#   plot4.R
 #
 #   Exploratory Data Analysis (class.coursera.org/exdata-035)
 #
@@ -72,15 +72,35 @@ get_household_power_consumption_data <- function() {
 
 #######################################################################
 #
-# Make Plot1
+# Make Plot4
 #
 #######################################################################
 
 epc <- get_household_power_consumption_data()
 
-png(filename = "plot1.png", width = 480, height = 480, units = "px")
-hist(epc$Global_active_power, main = "Global Active Power", xlab = "Global Active Power (kilowatts)",
-     col = "red", breaks = 12)
+png(filename = "plot4.png", width = 480, height = 480, units = "px")
+
+par(mfrow = c(2, 2), mar = c(4, 4, 2, 2))
+
+with (epc, {
+
+    # 1
+    plot(datetime, Global_active_power, type = "l", col = "black", lwd = 1, xlab = "", ylab = "Global Active Power")
+
+    # 2
+    plot(datetime, Voltage, type = "l", col = "black", lwd = 1)
+    
+    # 3
+    plot(datetime,  Sub_metering_1, type = "l", col = "black", lwd = 1, xlab = "", ylab = "Energy sub metering")
+    lines(datetime, Sub_metering_2, type = "l", col = "red",   lwd = 1)
+    lines(datetime, Sub_metering_3, type = "l", col = "blue",  lwd = 1)
+    legend("topright", lty=c(1,1, 1), lwd=c(1, 1, 1), col=c("black", "red", "blue"),
+           legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), bty = "n")
+
+    # 4
+    plot(datetime, Global_reactive_power, type = "l", col = "black", lwd = 1)
+})
+
 dev.off()
 
 

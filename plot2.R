@@ -58,14 +58,14 @@ get_household_power_consumption_data <- function() {
 #   Convert date and time to R date and time classes and
 #
 
-    epcFull$DateTime <- strptime(paste(epcFull$Date, epcFull$Time, sep = " "), "%d/%m/%Y %H:%M:%S")
+    epcFull$datetime <- strptime(paste(epcFull$Date, epcFull$Time, sep = " "), "%d/%m/%Y %H:%M:%S")
 
 ####
 #
 #   Select only the dates of interest
 #
 
-    epc <- subset(epcFull, (as.Date(epcFull$DateTime) >= minDate) & (as.Date(epcFull$DateTime) <= maxDate))
+    epc <- subset(epcFull, (as.Date(epcFull$datetime) >= minDate) & (as.Date(epcFull$datetime) <= maxDate))
 
     return(epc)
 }
@@ -79,7 +79,7 @@ get_household_power_consumption_data <- function() {
 epc <- get_household_power_consumption_data()
 
 png(filename = "plot2.png", width = 480, height = 480, units = "px")
-plot(epc$DateTime, epc$Global_active_power, xlab = "", ylab = "Global Active Power (kilowatts)",
+plot(epc$datetime, epc$Global_active_power, xlab = "", ylab = "Global Active Power (kilowatts)",
      type = "l", col = "black", lwd = 1)
 dev.off()
 

@@ -58,14 +58,14 @@ get_household_power_consumption_data <- function() {
 #   Convert date and time to R date and time classes and
 #
 
-    epcFull$DateTime <- strptime(paste(epcFull$Date, epcFull$Time, sep = " "), "%d/%m/%Y %H:%M:%S")
+    epcFull$datetime <- strptime(paste(epcFull$Date, epcFull$Time, sep = " "), "%d/%m/%Y %H:%M:%S")
 
 ####
 #
 #   Select only the dates of interest
 #
 
-    epc <- subset(epcFull, (as.Date(epcFull$DateTime) >= minDate) & (as.Date(epcFull$DateTime) <= maxDate))
+    epc <- subset(epcFull, (as.Date(epcFull$datetime) >= minDate) & (as.Date(epcFull$datetime) <= maxDate))
 
     return(epc)
 }
@@ -79,9 +79,9 @@ get_household_power_consumption_data <- function() {
 epc <- get_household_power_consumption_data()
 
 png(filename = "plot3.png", width = 480, height = 480, units = "px")
-plot(epc$DateTime,  epc$Sub_metering_1, type = "l", col = "black", lwd = 1, xlab = "", ylab = "Energy sub metering")
-lines(epc$DateTime, epc$Sub_metering_2, type = "l", col = "red",   lwd = 1)
-lines(epc$DateTime, epc$Sub_metering_3, type = "l", col = "blue",  lwd = 1)
+plot(epc$datetime,  epc$Sub_metering_1, type = "l", col = "black", lwd = 1, xlab = "", ylab = "Energy sub metering")
+lines(epc$datetime, epc$Sub_metering_2, type = "l", col = "red",   lwd = 1)
+lines(epc$datetime, epc$Sub_metering_3, type = "l", col = "blue",  lwd = 1)
 legend("topright", lty=c(1,1, 1), lwd=c(1, 1, 1), col=c("black", "red", "blue"),
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 dev.off()
