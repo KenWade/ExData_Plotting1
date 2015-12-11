@@ -1,12 +1,12 @@
-## Introduction
+## Introduction to Exploratory Data Analysis Course Project #1
 
-Dr. Peng's original README.md file is below.  It would be hard to improve upon it, I will not try.
+Dr. Peng's original README.md file is below.  It would be hard to improve upon it, I will not try except to add:
 
-The 4 plot.R files and the 4 plot.png files are included in the repo.
+* The 4 course project plot.R files and the 4 plot.png output files are included in the repo.
 
-Each of the plot.R files is organized the same way; an identical function that reads the datafile from the Working Directory and sets up the data frame, followed by the unique plot code.
+* Each of the plot.R files is organized the same way; an identical function that reads the datafile from the Working Directory and sets up the data frame, followed by the unique plot code.
 
-The assignment suggests to “First calculate a rough estimate of how much memory the dataset will require in memory before reading into R.”  Using the Rule of Thumb:
+* The assignment suggests to “First calculate a rough estimate of how much memory the dataset will require in memory before reading into R.”  Using the Rule of Thumb:
 
          rows * columns * 8 bytes
 
