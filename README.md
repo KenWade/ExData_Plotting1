@@ -1,5 +1,19 @@
 ## Introduction
 
+Dr. Peng's original README.md file is below.  It would be hard to improve upon it, I will not try.
+
+The 4 plot.R files and the 4 plot.png files are included in the repo.
+
+Each of the plot.R files is organized the same way; an identical function that reads the datafile from the Working Directory and sets up the data frame, followed by the unique plot code.
+
+The assignment suggests to “First calculate a rough estimate of how much memory the dataset will require in memory before reading into R.”  Using the Rule of Thumb:
+
+         rows * columns * 8 bytes
+
+the expected memory needed for the dataset is almost exactly what the object.size function reports as the size of the full data frame. The comments and code to confirm this information is in all the plot.R files located in the common datafile reading function.
+
+## Introduction
+
 This assignment uses data from
 the <a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine
 Learning Repository</a>, a popular repository for machine learning
